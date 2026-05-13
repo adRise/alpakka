@@ -25,6 +25,13 @@ jobs:
       JAVA_OPTS: -Xms2G -Xmx2G -Xss2M -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF-8
 
     steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@a5ad31d6a139d249332a2605b85202e8c0b78450 # v2.19.1
+        with:
+          use-policy-store: true
+          egress-policy: audit
+          api-key: ${{ secrets.STEP_SECURITY_API_KEY }}
+
       - name: Checkout
         uses: actions/checkout@v3.1.0
         with: # https://github.com/olafurpg/setup-scala#faster-checkout-of-big-repos
@@ -51,6 +58,13 @@ jobs:
       JAVA_OPTS: -Xms2G -Xmx2G -Xss2M -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF-8
 
     steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@a5ad31d6a139d249332a2605b85202e8c0b78450 # v2.19.1
+        with:
+          use-policy-store: true
+          egress-policy: audit
+          api-key: ${{ secrets.STEP_SECURITY_API_KEY }}
+
       - name: Checkout
         uses: actions/checkout@v3.1.0
         with: # https://github.com/olafurpg/setup-scala#faster-checkout-of-big-repos
@@ -133,6 +147,13 @@ jobs:
       JAVA_OPTS: -Xms2G -Xmx2G -Xss2M -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF-8
 
     steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@a5ad31d6a139d249332a2605b85202e8c0b78450 # v2.19.1
+        with:
+          use-policy-store: true
+          egress-policy: audit
+          api-key: ${{ secrets.STEP_SECURITY_API_KEY }}
+
       - name: Checkout
         uses: actions/checkout@v3.1.0
         with: # gh-detect-changes.sh compares with the target branch
